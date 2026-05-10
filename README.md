@@ -1,37 +1,46 @@
-# 🚀 Kobkit.K - Personal Portfolio Website
+# 💻 My Web Portfolio: Kobkit Kosaphan
 
-เว็บไซต์พอร์ตโฟลิโอและเรซูเม่ส่วนตัวของ **กอบกิจ โกษาพันธุ์ (เอิร์ธ)** ที่ถูกออกแบบมาเพื่อนำเสนอทักษะการทำงานแบบผสมผสาน (Hybrid Skills) ระหว่างสาย **Tech & Automation (RPA)** และสาย **Design (UX/UI, Digital Art)**
+*(This repository contains the source code for my personal web portfolio)*
 
-🌐 **ดูเว็บไซต์จริงได้ที่นี่:** [ใส่ลิงก์ GitHub Pages หรือลิงก์เว็บของคุณ]
+ยินดีต้อนรับสู่ Repository เว็บไซต์พอร์ตโฟลิโอของ **กอบกิจ โกษาพันธุ์ (เอิร์ธ)** โปรเจกต์นี้คือ **"Web Portfolio"** ที่ผมพัฒนาและเขียนโค้ดขึ้นมาเอง เพื่อใช้เป็นพื้นที่จัดแสดงผลงาน (Showcase), ทักษะความสามารถ (Skills), และเรซูเม่ (Resume) สำหรับการสมัครฝึกงานและการทำงานในอุตสาหกรรมเทคโนโลยี
 
----
+เป้าหมายของเว็บไซต์นี้คือการนำเสนอจุดเด่นของผมในฐานะคนทำงานสาย **Hybrid** ที่ผสมผสานระหว่างระบบหลังบ้าน **(RPA/Automation)** และการออกแบบหน้าบ้าน **(UX/UI/Digital Art)** 
 
-## ✨ Features (จุดเด่นของเว็บไซต์)
-
-- 🎨 **Minimalist & Clean Design:** ออกแบบด้วยโทนสีม่วงพาสเทล เน้นความเรียบหรู สบายตา และมีโครงสร้าง UX/UI ที่เป็นมิตรกับผู้ใช้งาน
-- 📱 **Fully Responsive:** ใช้ CSS Grid และ Flexbox เพื่อให้เว็บไซต์รองรับการแสดงผลบนทุกอุปกรณ์ (Desktop, Tablet, Mobile) ได้อย่างสมบูรณ์แบบ
-- 📊 **Interactive Presentations:** รองรับการฝัง (Embed) สไลด์นำเสนอจาก Canva ให้สามารถกดเลื่อนดูได้จากหน้าเว็บทันที
-- 📄 **PDF Integration:** มีระบบแสดงผลหน้าพรีวิวใบรับรอง (Certificates) พร้อมปุ่มเปิดดูไฟล์ PDF แบบเต็มจอ
-- 🖼️ **Dynamic Gallery:** โซนแกลเลอรีสำหรับจัดแสดงผลงาน Digital Art และ Graphic Design พร้อม Hover Effect
-- 🔗 **Social Links:** เชื่อมต่อช่องทางการติดต่อและโซเชียลมีเดียผ่านไอคอนจาก FontAwesome
+🌐 **คลิกเพื่อดูเว็บไซต์จริง (Live Preview):** https://mtyks.github.io/MyPortfolio/
 
 ---
 
-## 🛠️ Tech Stack (เทคโนโลยีที่ใช้พัฒนา)
+## 🎯 พอร์ตโฟลิโอนี้มีอะไรบ้าง? (What's Inside)
 
-โปรเจกต์นี้เขียนขึ้นมาใหม่ทั้งหมดโดยไม่พึ่งพา Framework ที่ซับซ้อน เพื่อโชว์ความเข้าใจในโครงสร้างพื้นฐานของการทำเว็บไซต์
-
-- **HTML5:** สำหรับจัดวางโครงสร้างเนื้อหา (Semantic HTML)
-- **CSS3:** สำหรับตกแต่งสไตล์ การจัดเลย์เอาต์ (Grid/Flexbox) และสร้างแอนิเมชัน
-- **Google Fonts:** ใช้ฟอนต์ 'Prompt' เพื่อความอ่านง่ายและดูทันสมัย
-- **FontAwesome:** สำหรับเรียกใช้งานไอคอน (Vector Icons)
+ใน Web Portfolio นี้ ผมได้แบ่งเนื้อหาออกเป็นส่วนต่างๆ เพื่อให้ง่ายต่อการอ่านและทำความรู้จักตัวตนของผม:
+- **👨‍💻 Profile & Resume:** ประวัติส่วนตัว ประวัติการศึกษา (เกรดเฉลี่ยล่าสุด 3.97) และทักษะที่เชี่ยวชาญ 
+- **🚀 Project Showcase:** ผลงานที่ผ่านมา เช่น การสร้าง Automation Workflow (UiPath) เพื่อจัดการข้อมูล
+- **🎨 Digital Art & Gallery:** แกลเลอรีรวบรวมผลงานการออกแบบ กราฟิก และการสร้างสรรค์ Virtual Influencer
+- **📑 Presentations & Certificates:** สไลด์นำเสนอผลงาน (ฝังระบบ Canva) และใบรับรองทักษะภาษาอังกฤษ (EFSET C1 / SPUTEP C1)
 
 ---
 
-## 🚀 How to Run (วิธีเปิดใช้งาน)
+## ✨ จุดเด่นของโค้ด (Key Features)
 
-โปรเจกต์นี้เป็น Static Website ธรรมดา สามารถเปิดใช้งานได้ทันทีโดยไม่ต้องติดตั้ง Server หรือ Dependencies ใดๆ
+- **Pure HTML & CSS:** พัฒนาขึ้นจากศูนย์ (From scratch) โดยไม่ใช้ Framework สำเร็จรูป เพื่อโชว์ความเข้าใจในโครงสร้างภาษาพื้นฐานของเว็บ
+- **Responsive Design:** ออกแบบด้วย CSS Grid และ Flexbox เพื่อให้หน้าเว็บพอร์ตโฟลิโอแสดงผลได้สวยงามทั้งบนหน้าจอคอมพิวเตอร์และโทรศัพท์มือถือ
+- **Interactive Elements:** มีระบบ Hover Effect, การฝังหน้าต่าง PDF ให้ดูบนเว็บได้ทันที, และการเชื่อมต่อลิงก์ GitHub/Social Media
 
-1. Clone repository นี้ลงในเครื่องของคุณ:
+---
+
+## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
+
+- **HTML5:** จัดวางโครงสร้างแบบ Semantic HTML
+- **CSS3:** ออกแบบ UI สไตล์ Minimalist (โทนสีม่วงอ่อน)
+- **Google Fonts:** ใช้ฟอนต์ 'Prompt' เพื่อความสวยงามและการอ่านที่สบายตา
+- **FontAwesome:** ใช้งาน Vector Icons สำหรับช่องทางการติดต่อ
+
+---
+
+## 🚀 วิธีการรันโปรเจกต์ (How to Run)
+
+หากคุณต้องการนำโค้ดนี้ไปศึกษาหรือรันในเครื่องของคุณ:
+
+1. Clone repository นี้:
    ```bash
    git clone [https://github.com/ใส](https://github.com/ใส)่ชื่อยูสเซอร์ของคุณ/ชื่อrepository.git
