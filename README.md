@@ -28,11 +28,3 @@
 - **FontAwesome:** ใช้งาน Vector Icons สำหรับช่องทางการติดต่อ
 
 ---
-
-## 🚀 วิธีการรันโปรเจกต์ (How to Run)
-
-หากคุณต้องการนำโค้ดนี้ไปศึกษาหรือรันในเครื่องของคุณ:
-
-1. Clone repository นี้:
-   ```bash
-   git clone [https://github.com/ใส](https://github.com/ใส)่ชื่อยูสเซอร์ของคุณ/ชื่อrepository.git
