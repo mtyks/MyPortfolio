@@ -1,7 +1,5 @@
 # 💻 My Web Portfolio: Kobkit Kosaphan
 
-*(This repository contains the source code for my personal web portfolio)*
-
 เว็บไซต์พอร์ตโฟลิโอของ **กอบกิจ โกษาพันธุ์ (เอิร์ธ)** นี้คือ **"Web Portfolio"** เพื่อใช้เป็นพื้นที่จัดแสดงผลงาน (Showcase), ทักษะความสามารถ (Skills), และเรซูเม่ (Resume) สำหรับการสมัครฝึกงานและการทำงานในอุตสาหกรรมเทคโนโลยี
 
 เป้าหมายของเว็บไซต์นี้คือการนำเสนอจุดเด่นของผมในฐานะคนทำงานสาย **Hybrid** ที่ผสมผสานระหว่างระบบหลังบ้าน **(RPA/Automation)** การออกแบบหน้าบ้าน **(UX/UI/Digital Art)** และการพัฒนาเว็บไซต์ **(Web Developer)**
