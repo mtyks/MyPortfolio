@@ -17,3 +17,21 @@
 
 ---
 
+This web portfolio serves as a professional showcase, skill hub, and interactive resume designed for internships and career opportunities in the tech industry.
+
+My goal is to demonstrate my unique value as a Hybrid Professional—seamlessly bridging the gap between backend automation (RPA/Automation), user-centric front-end experiences (UX/UI/Web Development), and digital art.
+
+👉 Live Preview: https://mtyks.github.io/MyPortfolio/
+
+---
+
+🎯 What's Inside?
+To help you get to know my work and technical capabilities, the portfolio is structured into three main sections:
+
+🚀 Project Showcase: A collection of past projects, including efficient automation workflows (UiPath) built to streamline data processing, alongside embedded presentations showcasing my project results.
+
+🎨 Gallery: A curated gallery of my digital art, brand visuals, and graphic design concepts.
+
+📑 Certifications: Credential highlights, featuring my Advanced English proficiency certifications (EFSET C1 / SPUTEP C1) and other technical credentials.
+
+---
