@@ -4,164 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kobkit Kosaphan | Portfolio</title>
-    <!-- เรียกใช้ฟอนต์ Prompt -->
-    <!-- เรียกใช้ไอคอนจาก FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        /* =========================================
-           ตั้งค่าสีและตัวแปรหลัก
-           ========================================= */
-        :root {
-            --primary-color: #9b59b6; 
-            --primary-light: #f3ebf6; 
-            --primary-dark: #732d91;  
-            --text-main: #333333;
-            --text-muted: #666666;
-            --bg-body: #fcfbfe;
-            --bg-card: #ffffff;
-            --shadow: 0 4px 15px rgba(155, 89, 182, 0.08);
-            --shadow-hover: 0 10px 25px rgba(155, 89, 182, 0.15);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Prompt', sans-serif; }
-
-        body { background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; }
-
-        /* Navbar */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo { font-size: 1.2rem; font-weight: 600; color: var(--primary-color); }
-        nav ul { list-style: none; display: flex; gap: 20px; }
-        nav ul li a { text-decoration: none; color: var(--text-main); transition: 0.3s; }
-        nav ul li a:hover { color: var(--primary-color); }
-
-        /* Section พื้นฐาน */
-        section { padding: 80px 10%; }
-        .section-title {
-            text-align: center; font-size: 2rem; color: var(--primary-dark); margin-bottom: 40px; position: relative;
-        }
-        .section-title::after {
-            content: ''; width: 50px; height: 3px; background: var(--primary-color); display: block; margin: 10px auto 0; border-radius: 5px;
-        }
-        /* =========================================
-           Social & Contact Links
-           ========================================= */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
-        }
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: var(--primary-light); /* พื้นหลังสีม่วงอ่อน */
-            color: var(--primary-dark); /* ตัวไอคอนสีม่วงเข้ม */
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(155, 89, 182, 0.1);
-        }
-        .social-link:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-        }
-        /* =========================================
-           Gallery / แกลเลอรีภาพประกอบ
-           ========================================= */
-        .gallery-grid {
-            display: grid;
-            /* ปรับขนาดขั้นต่ำของรูปภาพที่นี่ (ปัจจุบันคือ 250px) */
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            background-color: var(--bg-card);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover; /* ทำให้ภาพไม่เบี้ยว แม้ขนาดต้นฉบับจะต่างกัน */
-            transition: transform 0.4s ease;
-            display: block;
-        }
-
-        /* เอฟเฟกต์ซูมภาพตอนเอาเมาส์ชี้ */
-        .gallery-item:hover .gallery-img {
-            transform: scale(1.08);
-        }
-        /* Hero / แนะนำตัว */
-        .hero { background-color: var(--primary-light); text-align: center; padding: 120px 20px; }
-        .hero h1 { font-size: 2.8rem; color: var(--primary-dark); margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 20px; }
-        
-        /* ปุ่มแบบต่างๆ */
-        .btn {
-            display: inline-block; padding: 10px 25px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 30px; transition: 0.3s; font-weight: 500;
-        }
-        .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-        
-        .btn-outline {
-            display: inline-block; padding: 8px 15px; margin-top: 10px; background: transparent; color: var(--primary-color); text-decoration: none; border: 1px solid var(--primary-color); border-radius: 20px; font-size: 0.85rem; transition: 0.3s;
-        }
-        .btn-outline:hover { background: var(--primary-color); color: white; }
-
-        /* Grid */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-
-        /* Card */
-        .card {
-            background: var(--bg-card); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(155, 89, 182, 0.05); display: flex; flex-direction: column;
-        }
-        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        
-        .card-img { width: 100%; height: 200px; background-color: #e9e0f0; object-fit: cover; }
-        
-        /* ตัวแสดง PDF (Iframe) */
-        .pdf-viewer {
-            width: 100%; height: 250px; border: none; border-bottom: 1px solid rgba(155, 89, 182, 0.1); background-color: #f9f9f9;
-        }
-
-        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; align-items: flex-start; }
-        .card-content h3 { color: var(--primary-dark); margin-bottom: 10px; font-size: 1.2rem; }
-        .card-content p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; }
-        
-        .tag { background: var(--primary-light); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-right: 5px; margin-bottom: 5px; }
-
-        /* Footer */
-        footer { background: var(--primary-dark); color: white; text-align: center; padding: 30px 20px; }
-
-        @media (max-width: 768px) {
-            nav { padding: 15px 20px; flex-direction: column; gap: 10px; }
-            section { padding: 50px 5%; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- แถบนำทาง -->
     <nav>
         <div class="logo">Portfolio</div>
         <ul>
@@ -170,164 +18,28 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#certificates">Certificates</a></li>
         </ul>
+        <button id="theme-toggle" title="สลับโหมดมืด/สว่าง"><i class="fas fa-moon"></i></button>
     </nav>
 
-    <!-- ส่วนแนะนำตัว -->
     <header class="hero" id="about">
         <h1>Kobkit Kosaphan (Earth)</h1>
         <p>IT Student & Hybrid Creator | ผสมผสานทักษะระบบอัตโนมัติ (RPA), การออกแบบ UX/UI และศิลปะดิจิทัล เพื่อสร้างสรรค์โซลูชันที่ตอบโจทย์</p>
-        <a href="#projects" class="btn">ดูผลงานทั้งหมด</a>
-    </header>
-<!-- แถบปุ่ม Social Media -->
-
         <div class="social-links">
-            <a href="https://www.facebook.com/mttttkk/" target="_blank" class="social-link" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            
-            <a href="https://www.instagram.com/kkksp_mty/" target="_blank" class="social-link" title="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-           
-            <a href="https://github.com/mtyks" target="_blank" class="social-link" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <a href="mailto:kobkit.kos@gmail.com" class="social-link" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-
+            <a href="https://www.facebook.com/mttttkk/" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kkksp_mty/" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/mtyks" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:mainsmile2i@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
-   <!-- ส่วนผลงานโปรเจกต์ -->
+    </header>
+
     <section id="projects">
         <h2 class="section-title">Selected Projects</h2>
-        <div class="grid-container">
-            
-            <!-- โปรเจกต์ที่ 1  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>UiPath Expense Claim Automation </h3>
-                    <p>พัฒนาระบบบอทด้วย UiPath เพื่อดึงและจัดการข้อมูลคิวเบิกจ่าย ช่วยลดเวลาการทำงานแบบแมนนวล</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">UiPath</span>
-                        <span class="tag">RPA</span>
-                    </div>
-                    <a href="https://canva.link/c7kromlz3x2i4yr" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
+        
+        <div id="filter-container" class="filter-container">
             </div>
 
-            <!-- โปรเจกต์ที่ 2  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Website Income and Expenses</h3>
-                    <p>เว็บไซต์สำหรับบันทึกรายรับและรายจ่าย</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Website</span>
-                        <span class="tag">Github</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">Python</span>
-                    </div>
-                    <a href="https://github.com/mtyks/expense_tracker_system" target="_blank" class="btn-outline" style="flex: 1; text-align: center;">ดูโค้ด (GitHub)</a>
-                    <a href="https://canva.link/8h7q8ddk240ilib" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
+        <div class="grid-container" id="projects-container">
             </div>
-
-            <!-- โปรเจกต์ที่ 3  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Application Idea "MindMate"</h3>
-                    <p>“ผู้ช่วยดูแลสุขภาพจิตส่วนตัว” ให้ทุกคนเข้าถึงได้
-ง่าย ผ่านระบบ AI ที่สามารถพูดคุย วิเคราะห์อารมณ์ ให้คำแนะนำ และ
-ติดตามสภาวะจิตใจของผู้ใช้ได้อย่างต่อเนื่อง โดยไม่ต้องพึ่งบริการราคา
-แพงหรือเข้าพบผู้เชี่ยวชาญตลอดเวลา</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Idea</span>
-                    </div>
-                    <a href="https://canva.link/ydrvzl57983i4wu" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
-            </div>
-            <!-- โปรเจกต์ที่ 4  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Application Design HR Management Platform</h3>
-                    <p>HR + Pro เป็นแพลตฟอร์มบริหารทรัพยากรบุคคล (HR Management Platform) ที่ออกแบบมาเพื่อช่วยองค์กรจัดการข้อมูลพนักงาน การสรรหา การประเมินผล และการพัฒนาบุคลากรในรูปแบบดิจิทัลครบวงจร</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Application Design</span>
-                        <span class="tag">Idea</span>
-                    </div>
-                    <a href="https://canva.link/8sdp1fiw43zjz84" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
-            </div>
-            <!-- โปรเจกต์ที่ 5  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Basic Shopping Web Design</h3>
-                    <p>ผลงานการออกแบบเว็บไซต์เบื้องต้นครั้งแรก</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Website Design</span>
-                        <span class="tag">Github</span>
-                    </div>
-                    <a href="https://github.com/mtyks/SE-IT-67.github.io" target="_blank" class="btn-outline" style="text-align: center; display: block; width: 100%;">ดูโค้ด (GitHub)</a>
-                </div>
-            </div>
-             <!-- โปรเจกต์ที่ 6  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>N8n Price Tracker </h3>
-                    <p>ระบบติดตามราคาสินค้าโดยใช้ N8n ขับเคลื่อนด้วย low code และ AI ช่วยให้ติดตามราคาสินค้าได้อย่างมีประสิทธิภาพ ผลงานนำเสนอใน ICT Showcase 2026</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">N8n</span>
-                        <span class="tag">RPA</span>
-                    </div>
-                    <a href="https://www.canva.com/design/DAHHr-MxcCk/dbEuUq6k0VG4SIlnGrgj2A/view?utm_content=DAHHr-MxcCk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haa0ec461f0#1" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
-            </div>
-            <!-- โปรเจกต์ที่ 7  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Eduvault </h3>
-                    <p>ระบบจัดการคลังสือการสอนแบบแบ่งสิทธิ์ผู้ใช้งานบนโครงสร้างพื้นฐาน AWS Cloud</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">AWS Cloud</span>
-                        <span class="tag">Web Development</span>
-                    </div>
-                     <a href="https://github.com/mtyks/eduvault" target="_blank" class="btn-outline" style="text-align: center; display: block; width: 100%;">ดูโค้ด (GitHub)</a>
-                    <a href="https://drive.google.com/file/d/1PrmhhufUb-vUiBp2Ei0RWJrvUsIJ92yW/view?usp=sharing" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
-            </div>
-            
-             <!-- โปรเจกต์ที่ 8  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Online Shopping Cartopia </h3>
-                    <p>ผลงานออกแบบ Application Design และ Web Design พร้อม Datatable โครงสร้าง Database</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Database</span>
-                        <span class="tag">Application Design</span>
-                        <span class="tag">Website Design</span>
-                        <span class="tag">Figma</span>
-                    </div>
-                    <a href="https://www.figma.com/community/file/1647167177708174953" target="_blank" class="btn-outline" style="text-align: center; display: block;">Figma Application and Website Design</a>
-                    <a href="https://canva.link/118egfaulb4vnvp" target="_blank" class="btn-outline" style="text-align: center; display: block;">ดูสไลด์นำเสนอ (Canva)</a>
-                </div>
-            </div>
-
-             <!-- โปรเจกต์ที่ 9  -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>UnrealEngine5 Game เพื่อการศึกษา </h3>
-                    <p>ผลงานการสร้างเกมด้วย UnrealEngine5 "Adventure Of Cyber Law" มีหน้าที่ทำเกมทั้งหมดและช่วยทำรายงาน</p>
-                    <div style="margin-bottom: 15px;">
-                        <span class="tag">Game Developer</span>
-                        <span class="tag">Game Design</span>
-                    </div>
-                    <a href="https://youtu.be/UNnH0qN9faU" target="_blank" class="btn-outline" style="text-align: center; display: block;">Video การเล่นเบื้องต้น</a>
-                    <a href="https://drive.google.com/file/d/1fHLZgZ0RwEFD_0GYNh74iHv4W7-bFW9G/view?usp=sharing" target="_blank" class="btn-outline" style="text-align: center; display: block;">รูปเล่มโปรเจคแบบ PDF</a>
-                    <a href="https://drive.google.com/file/d/1OLbSkvIKaEP3bBGzOVon5L79eDEhu9C8/view?usp=sharing" class="btn-outline" style="text-align: center; display: block;">โหลดตัวเกมได้ที่นี่</a>
-                </div>
-            </div>
-            
-        </div>
     </section>
 
     <section id="gallery">
@@ -335,163 +47,28 @@
         <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">
             รวมผลงานภาพประกอบ และกิจกรรมต่างๆ ที่เกี่ยวข้องกับการเรียนและการทำงาน
         </p>
-        
-        <div class="gallery-grid">
-            
-            <!-- 🖼️ ภาพที่ 1 -->
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/j22WNNq3/ICTSHOWCASE.jpg" alt="ผลงานภาพประกอบ 1" class="gallery-img">
+        <div class="gallery-grid" id="gallery-container">
             </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/nrQTVKwf/335067454-1291737228223046-3729677608234859084-n.jpg" alt="ผลงานภาพประกอบ 2" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/ZnyjYPsG/544285022-798370572763527-4943756627601116597-n.jpg" alt="ผลงานภาพประกอบ 3" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/cC8T175N/550669811-829017776306323-8040900838514430197-n.jpg" alt="ผลงานภาพประกอบ 4" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/QMmW5BW5/306981030-3206946926237069-8646506871467884473-n.jpg" alt="ผลงานภาพประกอบ 5" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/K8rfYDxJ/305678790-789535172197601-7972176615370702035-n.jpg" alt="ผลงานภาพประกอบ 6" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/7LHVJJZ9/306354238-418936606889995-7779008337064943528-n.jpg" alt="ผลงานภาพประกอบ 7" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/HWNYBjVj/infomoblie.jpg" alt="ผลงานภาพประกอบ 8" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://i.postimg.cc/440fBnm9/infomoblie-blue.jpg" alt="ผลงานภาพประกอบ 9" class="gallery-img">
-            </div>
-        </div>
     </section>
 
-    <!-- ส่วนใบรับรอง (รองรับการใส่ไฟล์ PDF) -->
     <section id="certificates">
         <h2 class="section-title">Certifications (PDF)</h2>
-        <div class="grid-container">
-            
-            <!-- เริ่มต้น Card ใบ Cer ที่ 1 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>EF SET Certificate (C1 Advanced)</h3>
-                    <p>คะแนน 66/100 ระดับความเชี่ยวชาญการใช้ภาษาอังกฤษระดับสูง</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1LgHcpEMFe3qPulITWc43EiG5lapvVjys/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
+        <div class="grid-container" id="certificates-container">
             </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 1 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 2 (PDF) -->
-            <div class="card">           
-                <div class="card-content">
-                    <h3>DGA TDGA การออกแบบ UX/UI Certificate 2 Hours</h3>
-                    <p>ได้ผ่านการอบรมด้วยการเรียนออนไลน์ในบทเรียนการออกแบบ UX/UI เพื่อดึงดูดความสนใจของผู้ใช้</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1USaZ-iFU6b_o2GEeUPPk0EKqPHjk7Sdy/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 2 -->
-
-             <!-- เริ่มต้น Card ใบ Cer ที่ 3 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>กรมพัฒนาฝีมือแรงงาน Basic Cybersecurity 1.3 Hours</h3>
-                    <p>ได้ผ่านการอบรมด้าน Cybersecurity</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1YFN4ezD86wMWte5dbkEgwsrDAi5Bqmbh/view?usp=drive_link" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 3 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 4 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Huawei Cloud Basics: Development and Basic Concepts</h3>
-                    <p>ได้ผ่านการอบรม CRA Training Program</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/14vNSq8Q0EasI3qqseUqx2q7fJdXprE9k/view?usp=drive_link" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 4 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 5 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Huawei Development and Basic Concepts of Cloud Computing</h3>
-                    <p>ได้ผ่านการอบรม Development and Basic Concepts of Cloud Computing</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1HdurNTBmxv4fGnkbzCsK4eJQcmbDH4vC/view?usp=drive_link" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 5 -->
-
-             <!-- เริ่มต้น Card ใบ Cer ที่ 6 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>RTC Certificate of Academic Excellence, 2nd Year Diploma</h3>
-                    <p>Cumulative GPA: 3.98</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/19LVnU9ktWez_nlorbOz_RwnzadBwardI/view?usp=drive_link" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 6 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 7 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Thaimooc Using Technology to Enchance Learning 15 Hours</h3>
-                    <p>ผ่านหลักสูตรการใช้เทคโนโลยีเพื่อเสริมสร้างการเรียนรู้</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1noRusuiFunIEyPCK16KpeygL3NAwEX2I/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 7 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 8 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Thaimooc Digital Literacy and Cybersecurity 4 Hours</h3>
-                    <p>ผ่านหลักสูตรความเข้าใจ การใช้เทคโนโลยีดิจิทัล และความมั่นคงปลอดภัยทางไซเบอร์</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1llRRqjDBEjANGa4p3oEjm1PLRvvTU2Iw/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 8 -->
-
-            <!-- เริ่มต้น Card ใบ Cer ที่ 9 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Thaimooc Internet Communication Technology 45 Hours</h3>
-                    <p>ผ่านหลักสูตรทักษะคอมพิวเตอร์และเทคโนโลยีการสารสนเทศและการสื่อสาร</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1CohsEAPNNgzN6VVrCKEaNP_z1DwDEghw/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 9 -->
-
-             <!-- เริ่มต้น Card ใบ Cer ที่ 10 (PDF) -->
-            <div class="card">
-                <div class="card-content">
-                    <h3>Thaimooc Digital Media Creation 10 Hours</h3>
-                    <p>ผ่านหลักสูตรทักษะเทคโนโลยีการสร้างสรรค์สื่อดิจิทัล</p>
-                    <!-- ปุ่มสำหรับกดเปิด PDF เพื่อดูแบบเต็มจอ -->
-                    <a href="https://drive.google.com/file/d/1l8D7U6ftWfezvPAWkCGgAKpAKk3jxaVb/view?usp=sharing" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
-                </div>
-            </div>
-            <!-- สิ้นสุด Card ใบ Cer ที่ 10 -->
-
-        </div>
     </section>
 
-    <!-- ส่วนท้าย -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <button id="back-to-top" title="กลับขึ้นบนสุด"><i class="fas fa-arrow-up"></i></button>
+
     <footer>
         <p>&copy; 2026 Kobkit Kosaphan. All Rights Reserved.</p>
-        <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Developed with HTML & CSS</p>
+        <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Developed with HTML, CSS & JS</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
