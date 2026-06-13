@@ -138,17 +138,20 @@ const portfolioData = {
 
 function renderProjects(filterCategory = "All") {
     const container = document.getElementById('projects-container');
-    container.innerHTML = ''; 
+    if (!container) return; // ดัก Error หากไม่มี element นี้ในหน้าเว็บ
 
     const filteredProjects = filterCategory === "All" 
         ? portfolioData.projects 
         : portfolioData.projects.filter(p => p.category === filterCategory);
 
+    // 1. สร้างตัวแปรเก็บ HTML ทั้งหมดไว้ก่อน (ไม่ render ทีละรอบใน loop)
+    let htmlContent = '';
+
     filteredProjects.forEach(proj => {
         const tagsHTML = proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
         const linksHTML = proj.links.map(link => `<a href="${link.url}" target="_blank" class="btn-outline">${link.text}</a>`).join('');
 
-        container.innerHTML += `
+        htmlContent += `
             <div class="card">
                 <div class="card-content">
                     <h3>${proj.title}</h3>
@@ -159,23 +162,36 @@ function renderProjects(filterCategory = "All") {
             </div>
         `;
     });
+
+    // 2. เอา HTML ทั้งหมดที่ประกอบเสร็จแล้ว ยัดใส่ container ทีเดียว (เบราว์เซอร์ทำงานเร็วขึ้น)
+    container.innerHTML = htmlContent; 
 }
 
 function renderGallery() {
     const container = document.getElementById('gallery-container');
+    if (!container) return;
+
+    let htmlContent = ''; // สร้างตัวแปรสะสม HTML
+
     portfolioData.gallery.forEach(imgUrl => {
-        container.innerHTML += `
+        htmlContent += `
             <div class="gallery-item" onclick="openLightbox('${imgUrl}')">
                 <img src="${imgUrl}" alt="Activity" class="gallery-img" loading="lazy">
             </div>
         `;
     });
+
+    container.innerHTML = htmlContent; // อัปเดต DOM 
 }
 
 function renderCertificates() {
     const container = document.getElementById('certificates-container');
+    if (!container) return;
+
+    let htmlContent = ''; // สร้างตัวแปรสะสม HTML
+
     portfolioData.certificates.forEach(cert => {
-        container.innerHTML += `
+        htmlContent += `
             <div class="card">
                 <div class="card-content">
                     <h3>${cert.title}</h3>
@@ -187,6 +203,8 @@ function renderCertificates() {
             </div>
         `;
     });
+
+    container.innerHTML = htmlContent; // อัปเดต DOM 
 }
 
 // สร้างปุ่ม Filter อัตโนมัติจากหมวดหมู่ที่มี
