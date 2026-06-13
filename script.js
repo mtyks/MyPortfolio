@@ -101,7 +101,7 @@ const portfolioData = {
                 { text: "Live Preview", url: "https://mtyks.github.io/Basic-GameTopUpSite/" }
             ]
         }
-    ]
+    ],
 
     gallery: [
         "https://i.postimg.cc/j22WNNq3/ICTSHOWCASE.jpg",
