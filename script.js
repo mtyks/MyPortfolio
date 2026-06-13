@@ -95,7 +95,7 @@ const portfolioData = {
             title: "Basic GameTopup เพื่อการศึกษา",
             description: "ทดลองการสร้างเว็บเติมเงินเกมออนไลน์",
             category: "Design",
-            tags: ["Idea", "Frontend Design", "Website Design", "Github", "Website", "JavaScript],
+            tags: ["Idea", "Frontend Design", "Website Design", "Github", "Website", "JavaScript"],
             links: [
                 { text: "ดูโค้ด (GitHub)", url: "https://github.com/mtyks/Basic-GameTopUpSite" },
                 { text: "Live Preview", url: "https://mtyks.github.io/Basic-GameTopUpSite/" }
