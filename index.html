@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kobkit Kosaphan | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="#about">Profile</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+        </ul>
+        <button id="theme-toggle" title="สลับโหมดมืด/สว่าง"><i class="fas fa-moon"></i></button>
+    </nav>
+
+    <header class="hero" id="about">
+        <h1>Kobkit Kosaphan (Earth)</h1>
+        <p>IT Student & Hybrid Creator | ผสมผสานทักษะระบบอัตโนมัติ (RPA), การออกแบบ UX/UI และศิลปะดิจิทัล เพื่อสร้างสรรค์โซลูชันที่ตอบโจทย์</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/mttttkk/" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kkksp_mty/" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/mtyks" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:mainsmile2i@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <section id="projects">
+        <h2 class="section-title">Selected Projects</h2>
+        
+        <div id="filter-container" class="filter-container">
+            </div>
+
+        <div class="grid-container" id="projects-container">
+            </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">Activities</h2>
+        <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">
+            รวมผลงานภาพประกอบ และกิจกรรมต่างๆ ที่เกี่ยวข้องกับการเรียนและการทำงาน
+        </p>
+        <div class="gallery-grid" id="gallery-container">
+            </div>
+    </section>
+
+    <section id="certificates">
+        <h2 class="section-title">Certifications (PDF)</h2>
+        <div class="grid-container" id="certificates-container">
+            </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <button id="back-to-top" title="กลับขึ้นบนสุด"><i class="fas fa-arrow-up"></i></button>
+    
+<!-- Test -->
+    <footer>
+        <p>&copy; 2026 Kobkit Kosaphan. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Developed with HTML, CSS & JS</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
