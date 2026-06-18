@@ -1,0 +1,37 @@
+# 💻 My Web Portfolio: Kobkit Kosaphan
+
+เว็บไซต์พอร์ตโฟลิโอของ **กอบกิจ โกษาพันธุ์ (เอิร์ธ)** นี้คือ **"Web Portfolio"** เพื่อใช้เป็นพื้นที่จัดแสดงผลงาน (Showcase), ทักษะความสามารถ (Skills), และเรซูเม่ (Resume) สำหรับการสมัครฝึกงานและการทำงานในอุตสาหกรรมเทคโนโลยี
+
+เป้าหมายของเว็บไซต์นี้คือการนำเสนอจุดเด่นของผมในฐานะคนทำงานสาย **Hybrid** ที่ผสมผสานระหว่างระบบหลังบ้าน **(RPA/Automation)** การออกแบบหน้าบ้าน **(UX/UI/Digital Art)** และการพัฒนาเว็บไซต์ **(Web Developer)**
+
+🌐 **คลิกเพื่อดูเว็บไซต์จริง (Live Preview):** https://mtyks.github.io/MyPortfolio/
+
+---
+
+## 🎯 พอร์ตโฟลิโอนี้มีอะไรบ้าง? (What's Inside)
+
+ใน Web Portfolio นี้ ผมได้แบ่งเนื้อหาออกเป็นส่วนต่างๆ เพื่อให้ง่ายต่อการอ่านและทำความรู้จักตัวตนของผม:
+- **🚀 Project Showcase:** ผลงานที่ผ่านมา เช่น การสร้าง Automation Workflow (UiPath) เพื่อจัดการข้อมูล สไลด์นำเสนอผลงาน (ฝังระบบ Canva)
+- **🎨 Gallery:** แกลเลอรีรวบรวมผลงาน
+- **📑 Certificates:** ใบรับรองทักษะภาษาอังกฤษ (EFSET C1 / SPUTEP C1) และใบรับรองอื่น ๆ
+
+---
+
+This web portfolio serves as a professional showcase, skill hub, and interactive resume designed for internships and career opportunities in the tech industry.
+
+My goal is to demonstrate my unique value as a Hybrid Professional—seamlessly bridging the gap between backend automation (RPA/Automation), user-centric front-end experiences (UX/UI/Web Development), and digital art.
+
+👉 Live Preview: https://mtyks.github.io/MyPortfolio/
+
+---
+
+🎯 What's Inside?
+To help you get to know my work and technical capabilities, the portfolio is structured into three main sections:
+
+🚀 Project Showcase: A collection of past projects, including efficient automation workflows (UiPath) built to streamline data processing, alongside embedded presentations showcasing my project results.
+
+🎨 Gallery: A curated gallery of my digital art, brand visuals, and graphic design concepts.
+
+📑 Certifications: Credential highlights, featuring my Advanced English proficiency certifications (EFSET C1 / SPUTEP C1) and other technical credentials.
+
+---

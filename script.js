@@ -20,6 +20,7 @@ const portfolioData = {
             tags: ["Website", "Github", "Django", "Python"],
             links: [
                 { text: "ดูโค้ด (GitHub)", url: "https://github.com/mtyks/expense_tracker_system" },
+                { text: "ดูโค้ด (Google Drive)", url: "https://drive.google.com/file/d/1MJL0tek4GQd1g8jtMGv3EKkFj7tYa5d5/view?usp=drive_link" },
                 { text: "ดูสไลด์นำเสนอ (Canva)", url: "https://canva.link/8h7q8ddk240ilib" }
             ]
         },
@@ -48,6 +49,7 @@ const portfolioData = {
             tags: ["Website Design", "Github"],
             links: [
                 { text: "ดูโค้ด (GitHub)", url: "https://github.com/mtyks/SE-IT-67.github.io" },
+                { text: "ดูโค้ด (Google Drive)", url: "https://drive.google.com/file/d/19ZPE4S4NpWAtiNui86S2vNycKRAhR9aF/view?usp=drive_link" },
                 { text: "Live Preview", url: "https://mtyks.github.io/SE-IT-67.github.io/" }
             ]
         },
@@ -67,6 +69,7 @@ const portfolioData = {
             tags: ["AWS Cloud", "Web Development"],
             links: [
                 { text: "ดูโค้ด (GitHub)", url: "https://github.com/mtyks/eduvault" },
+                { text: "ดูโค้ด (Google Drive)", url: "https://drive.google.com/file/d/1e5qRvp-vI-SfJFphEH2tkY2eRg1175Fz/view?usp=drive_link" },
                 { text: "ดูสไลด์นำเสนอ (PDF)", url: "https://drive.google.com/file/d/1PrmhhufUb-vUiBp2Ei0RWJrvUsIJ92yW/view?usp=sharing" }
             ]
         },
@@ -98,6 +101,7 @@ const portfolioData = {
             tags: ["Idea", "Frontend Design", "Website Design", "Github", "Website", "JavaScript"],
             links: [
                 { text: "ดูโค้ด (GitHub)", url: "https://github.com/mtyks/Basic-GameTopUpSite" },
+                { text: "ดูโค้ด (Google Drive)", url: "https://drive.google.com/file/d/1AXPEJhWfVC7nC4847els1GUYPBToBQYr/view?usp=drive_link" },
                 { text: "Live Preview", url: "https://mtyks.github.io/Basic-GameTopUpSite/" }
             ]
         }
@@ -163,7 +167,7 @@ function renderProjects(filterCategory = "All") {
         `;
     });
 
-    // 2. เอา HTML ทั้งหมดที่ประกอบเสร็จแล้ว ยัดใส่ container ทีเดียว (เบราว์เซอร์ทำงานเร็วขึ้น)
+    // 2. เอา HTML ทั้งหมดที่ประกอบเสร็จแล้ว ยัดใส่ container ทีเดียว 
     container.innerHTML = htmlContent; 
 }
 
