@@ -1,8 +1,85 @@
 // ==========================================
-// 1. ฐานข้อมูล Portfolio 
+// 1. ฐานข้อมูล Portfolio
 // ==========================================
 
 const portfolioData = {
+
+    skillModules: [
+        {
+            title: "Automation & AI",
+            icon: "fa-diagram-project",
+            tags: ["UiPath", "n8n", "RPA", "Generative AI (Gemini Pro)"]
+        },
+        {
+            title: "Design & Web",
+            icon: "fa-pen-ruler",
+            tags: ["Figma", "HTML", "CSS", "JavaScript", "Python", "Django", "Bootstrap", "C++"]
+        },
+        {
+            title: "Digital Art & Media",
+            icon: "fa-palette",
+            tags: ["Photoshop", "Illustrator", "Premiere Pro", "Clip Studio", "Canva"]
+        },
+        {
+            title: "Database & Network",
+            icon: "fa-server",
+            tags: ["MySQL", "Cisco Packet Tracer", "Huawei Cloud", "AWS Cloud"]
+        }
+    ],
+
+    experience: [
+        {
+            role: "ช่างเทคนิคและพนักงานขาย",
+            org: "Win Win Com",
+            date: "2024 · ระยะเวลา 4 เดือน",
+            points: [
+                "ซ่อมและแก้ปัญหาคอมพิวเตอร์เบื้องต้นให้ลูกค้า",
+                "ให้คำแนะนำเกี่ยวกับอุปกรณ์ไอทีและดูแลการขาย"
+            ]
+        },
+        {
+            role: "ออกแบบกราฟิกและติดตั้ง",
+            org: "Signage Shop Soi 4",
+            date: "2022 · ระยะเวลา 4 เดือน",
+            points: [
+                "ออกแบบกราฟิกสำหรับสื่อสิ่งพิมพ์และป้ายโฆษณา",
+                "จัดเตรียมไฟล์งานให้ถูกต้องและพร้อมสำหรับส่งพิมพ์จริง"
+            ]
+        }
+    ],
+
+    education: [
+        {
+            role: "ปริญญาตรี เทคโนโลยีสารสนเทศ",
+            org: "มหาวิทยาลัยศรีปทุม",
+            date: "2025 — ปัจจุบัน",
+            points: ["CGPA: 3.98"]
+        },
+        {
+            role: "ปวส. เทคโนโลยีธุรกิจดิจิทัล",
+            org: "วิทยาลัยเทคนิคราชบุรี",
+            date: "2023 — 2024",
+            points: ["GPAX: 3.98"]
+        },
+        {
+            role: "ปวช. คอมพิวเตอร์กราฟิก",
+            org: "วิทยาลัยเทคนิคราชบุรี",
+            date: "2019 — 2022",
+            points: ["GPAX: 3.04"]
+        },
+        {
+            role: "มัธยมศึกษาตอนต้น",
+            org: "โรงเรียนราชโบริกานุเคราะห์",
+            date: "2016 — 2018",
+            points: ["GPAX: 3.14"]
+        }
+    ],
+
+    languages: [
+        { name: "ภาษาไทย", detail: "ภาษาหลัก", icon: "fa-comments" },
+        { name: "English — C1", detail: "EFSET 66 / SPUTEP 88", icon: "fa-globe" }
+    ],
+
     projects: [
         {
             title: "UiPath Expense Claim Automation",
@@ -140,20 +217,65 @@ const portfolioData = {
 // 2. ฟังก์ชันการแสดงผลเนื้อหา (Render)
 // ==========================================
 
+function renderSkillModules() {
+    const container = document.getElementById('skills-container');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.skillModules.map(mod => `
+        <div class="module-card">
+            <div class="module-header">
+                <div class="module-icon"><i class="fas ${mod.icon}"></i></div>
+                <span class="module-title">${mod.title}</span>
+            </div>
+            <div class="module-tags">
+                ${mod.tags.map(t => `<span class="module-tag">${t}</span>`).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderTimeline(containerId, items) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = items.map(item => `
+        <div class="timeline-item">
+            <span class="timeline-date">${item.date}</span>
+            <div class="timeline-role">${item.role}</div>
+            <span class="timeline-org">${item.org}</span>
+            <ul>${item.points.map(p => `<li>${p}</li>`).join('')}</ul>
+        </div>
+    `).join('');
+}
+
+function renderLanguages() {
+    const container = document.getElementById('languages-container');
+    if (!container) return;
+
+    container.innerHTML = portfolioData.languages.map(lang => `
+        <div class="lang-chip">
+            <i class="fas ${lang.icon}"></i>
+            <div>
+                <span class="lang-name">${lang.name}</span>
+                <span class="lang-detail">${lang.detail}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
 function renderProjects(filterCategory = "All") {
     const container = document.getElementById('projects-container');
     if (!container) return; // ดัก Error หากไม่มี element นี้ในหน้าเว็บ
 
-    const filteredProjects = filterCategory === "All" 
-        ? portfolioData.projects 
+    const filteredProjects = filterCategory === "All"
+        ? portfolioData.projects
         : portfolioData.projects.filter(p => p.category === filterCategory);
 
-    // 1. สร้างตัวแปรเก็บ HTML ทั้งหมดไว้ก่อน (ไม่ render ทีละรอบใน loop)
     let htmlContent = '';
 
     filteredProjects.forEach(proj => {
         const tagsHTML = proj.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-        const linksHTML = proj.links.map(link => `<a href="${link.url}" target="_blank" class="btn-outline">${link.text}</a>`).join('');
+        const linksHTML = proj.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener" class="btn-outline">${link.text}</a>`).join('');
 
         htmlContent += `
             <div class="card">
@@ -167,15 +289,14 @@ function renderProjects(filterCategory = "All") {
         `;
     });
 
-    // 2. เอา HTML ทั้งหมดที่ประกอบเสร็จแล้ว ยัดใส่ container ทีเดียว 
-    container.innerHTML = htmlContent; 
+    container.innerHTML = htmlContent;
 }
 
 function renderGallery() {
     const container = document.getElementById('gallery-container');
     if (!container) return;
 
-    let htmlContent = ''; // สร้างตัวแปรสะสม HTML
+    let htmlContent = '';
 
     portfolioData.gallery.forEach(imgUrl => {
         htmlContent += `
@@ -185,14 +306,14 @@ function renderGallery() {
         `;
     });
 
-    container.innerHTML = htmlContent; // อัปเดต DOM 
+    container.innerHTML = htmlContent;
 }
 
 function renderCertificates() {
     const container = document.getElementById('certificates-container');
     if (!container) return;
 
-    let htmlContent = ''; // สร้างตัวแปรสะสม HTML
+    let htmlContent = '';
 
     portfolioData.certificates.forEach(cert => {
         htmlContent += `
@@ -201,21 +322,21 @@ function renderCertificates() {
                     <h3>${cert.title}</h3>
                     <p>${cert.description || cert.desc}</p>
                     <div class="card-actions">
-                        <a href="${cert.url}" target="_blank" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
+                        <a href="${cert.url}" target="_blank" rel="noopener" class="btn-outline">ดูไฟล์ PDF (เต็มจอ)</a>
                     </div>
                 </div>
             </div>
         `;
     });
 
-    container.innerHTML = htmlContent; // อัปเดต DOM 
+    container.innerHTML = htmlContent;
 }
 
 // สร้างปุ่ม Filter อัตโนมัติจากหมวดหมู่ที่มี
 function setupFilters() {
     const filterContainer = document.getElementById('filter-container');
     const categories = ["All", ...new Set(portfolioData.projects.map(p => p.category))];
-    
+
     categories.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = `filter-btn ${cat === 'All' ? 'active' : ''}`;
@@ -230,7 +351,7 @@ function setupFilters() {
 }
 
 // ==========================================
-// 3. ฟีเจอร์เสริม (Dark Mode, Lightbox, Scroll)
+// 3. ฟีเจอร์เสริม (Dark Mode, Lightbox, Scroll, Mobile Nav)
 // ==========================================
 
 // Dark Mode
@@ -253,6 +374,18 @@ themeToggleBtn.addEventListener('click', () => {
         themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
     }
 });
+
+// Mobile Nav Toggle
+const navToggleBtn = document.getElementById('nav-toggle');
+const navList = document.querySelector('nav ul');
+if (navToggleBtn && navList) {
+    navToggleBtn.addEventListener('click', () => {
+        navList.classList.toggle('open');
+    });
+    navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navList.classList.remove('open'));
+    });
+}
 
 // Lightbox
 const lightbox = document.getElementById('lightbox');
@@ -282,6 +415,10 @@ backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 // 4. สั่งให้ทำงานเมื่อโหลดหน้าเว็บเสร็จ
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+    renderSkillModules();
+    renderTimeline('experience-container', portfolioData.experience);
+    renderTimeline('education-container', portfolioData.education);
+    renderLanguages();
     setupFilters();
     renderProjects();
     renderGallery();

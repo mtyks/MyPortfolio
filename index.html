@@ -3,58 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kobkit Kosaphan | Portfolio</title>
+    <title>กอบกิจ โกษาพันธุ์ | UX/UI Designer · RPA Automation · Web Developer</title>
+    <meta name="description" content="พอร์ตโฟลิโอของกอบกิจ โกษาพันธุ์ (เอิร์ธ) นักศึกษาเทคโนโลยีสารสนเทศ สาย Hybrid ระหว่าง RPA Automation, UX/UI Design และ Web Development">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <div class="logo">Portfolio</div>
+        <a href="#about" class="logo">KK<span>/earth</span></a>
         <ul>
-            <li><a href="#about">Profile</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="theme-toggle" title="สลับโหมดมืด/สว่าง"><i class="fas fa-moon"></i></button>
+        <div class="nav-actions">
+            <button id="theme-toggle" title="สลับโหมดมืด/สว่าง"><i class="fas fa-moon"></i></button>
+            <button id="nav-toggle" title="เมนู" aria-label="เปิดเมนู"><i class="fas fa-bars"></i></button>
+        </div>
     </nav>
 
+    <!-- ============ HERO ============ -->
     <header class="hero" id="about">
-        <h1>Kobkit Kosaphan (Earth)</h1>
-        <p>IT Student & Hybrid Creator | ผสมผสานทักษะระบบอัตโนมัติ (RPA), การออกแบบ UX/UI และศิลปะดิจิทัล เพื่อสร้างสรรค์โซลูชันที่ตอบโจทย์</p>
-        <div class="social-links">
-            <a href="https://www.facebook.com/mttttkk/" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/kkksp_mty/" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/mtyks" target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="mailto:mainsmile2i@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="hero-inner">
+
+            <div class="hero-content">
+                <p class="eyebrow">// PORTFOLIO — BANGKOK, TH</p>
+                <h1 class="hero-name">กอบกิจ โกษาพันธุ์<span class="hero-nickname">Kobkit "Earth" Kosaphan</span></h1>
+                <p class="role-line">
+                    <span>UX/UI Designer</span><i class="fas fa-circle role-dot"></i><span>RPA Automation</span><i class="fas fa-circle role-dot"></i><span>Web Developer</span>
+                </p>
+                <p class="hero-desc">
+                    นักศึกษาเทคโนโลยีสารสนเทศ ชั้นปีที่ 3 ทำงานได้หลากหลายครอบคลุมทั้งสาย <strong>ระบบอัตโนมัติ</strong> (UiPath, n8n) และงานออกแบบที่ยึดผู้ใช้เป็นศูนย์กลาง (UX/UI, HTML/CSS) — ใช้ Generative AI เป็นผู้ช่วยเพิ่มประสิทธิภาพงาน พร้อมเรียนรู้เครื่องมือใหม่อยู่เสมอ เพื่อให้ทุกงานที่ส่งมอบออกมาสมบูรณ์
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn-primary">ดูผลงานทั้งหมด <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-ghost">ติดต่อเอิร์ธ</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/mttttkk/" target="_blank" rel="noopener" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/kkksp_mty/" target="_blank" rel="noopener" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/mtyks" target="_blank" rel="noopener" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:kobkit.kos@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+66643298429" class="social-link" title="โทร"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-diagram" aria-hidden="true">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" class="connector-svg">
+                    <line class="connector" x1="50" y1="50" x2="50" y2="10" />
+                    <line class="connector" x1="50" y1="50" x2="87" y2="32" />
+                    <line class="connector" x1="50" y1="50" x2="87" y2="70" />
+                    <line class="connector" x1="50" y1="50" x2="13" y2="70" />
+                    <line class="connector" x1="50" y1="50" x2="13" y2="32" />
+                </svg>
+                <div class="node node-center">
+                    <img src="assets/profile.jpg" alt="กอบกิจ โกษาพันธุ์">
+                </div>
+                <div class="node node-tag node-tag--n" data-label="RPA / AUTOMATION"><i class="fas fa-diagram-project"></i></div>
+                <div class="node node-tag node-tag--ne" data-label="UX / UI DESIGN"><i class="fas fa-pen-ruler"></i></div>
+                <div class="node node-tag node-tag--se" data-label="WEB DEVELOPER"><i class="fas fa-code"></i></div>
+                <div class="node node-tag node-tag--sw" data-label="DIGITAL ART"><i class="fas fa-palette"></i></div>
+                <div class="node node-tag node-tag--nw" data-label="CLOUD / NETWORK"><i class="fas fa-cloud"></i></div>
+            </div>
+
         </div>
+        <a href="#skills" class="scroll-cue" aria-hidden="true"><i class="fas fa-chevron-down"></i></a>
     </header>
 
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+        <p class="eyebrow center">// SKILL_STACK</p>
+        <h2 class="section-title">โมดูลทักษะ</h2>
+        <p class="section-lead">แบ่งตามสายงานที่ถนัด — สลับใช้งานร่วมกันได้ตามโจทย์ของแต่ละโปรเจกต์</p>
+
+        <div class="module-grid" id="skills-container"></div>
+    </section>
+
+    <!-- ============ EXPERIENCE + EDUCATION ============ -->
+    <section id="experience">
+        <p class="eyebrow center">// EXPERIENCE</p>
+        <h2 class="section-title">ประสบการณ์ทำงาน</h2>
+
+        <div class="timeline" id="experience-container"></div>
+
+        <p class="eyebrow center timeline-gap">// EDUCATION</p>
+        <h2 class="section-title">การศึกษา</h2>
+
+        <div class="timeline" id="education-container"></div>
+
+        <div class="lang-row" id="languages-container"></div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
     <section id="projects">
-        <h2 class="section-title">Selected Projects</h2>
-        
-        <div id="filter-container" class="filter-container">
-            </div>
+        <p class="eyebrow center">// PROJECTS</p>
+        <h2 class="section-title">ผลงานที่ผ่านมา</h2>
 
-        <div class="grid-container" id="projects-container">
-            </div>
+        <div id="filter-container" class="filter-container"></div>
+
+        <div class="grid-container" id="projects-container"></div>
     </section>
 
+    <!-- ============ GALLERY ============ -->
     <section id="gallery">
-        <h2 class="section-title">Activities</h2>
-        <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">
-            รวมผลงานภาพประกอบ และกิจกรรมต่างๆ ที่เกี่ยวข้องกับการเรียนและการทำงาน
-        </p>
-        <div class="gallery-grid" id="gallery-container">
-            </div>
+        <p class="eyebrow center">// GALLERY</p>
+        <h2 class="section-title">กิจกรรมและผลงานภาพ</h2>
+        <p class="section-lead">รวมภาพประกอบ และกิจกรรมต่าง ๆ ที่เกี่ยวข้องกับการเรียนและการทำงาน</p>
+        <div class="gallery-grid" id="gallery-container"></div>
     </section>
 
+    <!-- ============ CERTIFICATES ============ -->
     <section id="certificates">
-        <h2 class="section-title">Certifications (PDF)</h2>
-        <div class="grid-container" id="certificates-container">
+        <p class="eyebrow center">// CERTIFICATIONS</p>
+        <h2 class="section-title">ใบรับรองและผลงานด้านวิชาการ</h2>
+        <div class="grid-container" id="certificates-container"></div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+        <p class="eyebrow center">// CONTACT</p>
+        <h2 class="section-title">ร่วมงานกับเอิร์ธ</h2>
+        <p class="section-lead">เปิดรับโอกาสฝึกงานและงานที่เกี่ยวกับ RPA Automation, UX/UI Design หรือ Web Development</p>
+
+        <div class="contact-panel">
+            <a href="mailto:kobkit.kos@gmail.com" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div><span class="contact-label">Email</span><span class="contact-value">kobkit.kos@gmail.com</span></div>
+            </a>
+            <a href="tel:+66643298429" class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div><span class="contact-label">โทรศัพท์</span><span class="contact-value">+66 64-329-8429</span></div>
+            </a>
+            <a href="https://www.facebook.com/mttttkk/" target="_blank" rel="noopener" class="contact-item">
+                <i class="fab fa-facebook-f"></i>
+                <div><span class="contact-label">Facebook</span><span class="contact-value">mttttkk</span></div>
+            </a>
+            <a href="https://www.instagram.com/kkksp_mty/" target="_blank" rel="noopener" class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <div><span class="contact-label">Instagram</span><span class="contact-value">kkksp_mty</span></div>
+            </a>
+            <div class="contact-item contact-item--static">
+                <i class="fas fa-location-dot"></i>
+                <div><span class="contact-label">พื้นที่ทำงาน</span><span class="contact-value">เขตสายไหม กรุงเทพมหานคร</span></div>
             </div>
+            <a href="assets/Kobkit-Resume-TH.pdf" download class="contact-item contact-item--cta">
+                <i class="fas fa-file-arrow-down"></i>
+                <div><span class="contact-label">เรซูเม่</span><span class="contact-value">ดาวน์โหลด PDF</span></div>
+            </a>
+        </div>
     </section>
 
     <div id="lightbox" class="lightbox">
@@ -63,11 +167,10 @@
     </div>
 
     <button id="back-to-top" title="กลับขึ้นบนสุด"><i class="fas fa-arrow-up"></i></button>
-    
-<!-- Test -->
+
     <footer>
-        <p>&copy; 2026 Kobkit Kosaphan. All Rights Reserved.</p>
-        <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Developed with HTML, CSS & JS</p>
+        <p>&copy; 2026 กอบกิจ โกษาพันธุ์ (Kobkit Kosaphan). All Rights Reserved.</p>
+        <p class="footer-sub">Designed &amp; Built with HTML, CSS &amp; JS</p>
     </footer>
 
     <script src="script.js"></script>
